@@ -21,7 +21,7 @@ public class MailSender {
 			smm.setTo(email);//邮件接收者
 			smm.setSubject("账户激活");//邮件主题
 			smm.setText("Hi,"+username+"：欢迎注册<br/>"
-					+"<a href='http://www.baidu.com'>去百度玩吗？？</a><br/>"
+					+"<a href='http://www.baidu.com'>投票系统</a><br/>"
 					+"<img src='cid:pic123'/>",true);//邮件内容
 			FileSystemResource fsr=new FileSystemResource("d:/02.jpg");
 			smm.addInline("pic123", fsr);
