@@ -5,6 +5,6 @@
 		select  *  from VoteUser where vuUsername=#{vuUsername} and vuPassword=#{vuPassword}
 	</select>
  	<insert id="Register" parameterType="User"  >
-		insert into VoteUser values (seq_voteusers_vuId.nextval,#{vuUsername},#{vuPassword},1,1,#{vuEmail})
+		insert into VoteUser values (seq_voteusers_vuId.nextval,#{vuUsername},#{vuPassword},2,1,#{vuEmail})
 	</insert> 
 </mapper>

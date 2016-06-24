@@ -21,7 +21,7 @@
 <div id="message" class="box">
 	<h2>提示信息</h2>
 	<div class="content">
-		<p>恭喜：注册成功！<a href="user_jihuo.action">进入投票首页&gt;&gt;</a></p>
+		<p>恭喜：注册成功！<a href="user_jihuo.action">激活账户&gt;&gt;</a></p>
 	</div>
 </div>
 <div id="footer" class="wrap">

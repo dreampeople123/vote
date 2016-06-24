@@ -16,6 +16,7 @@ import com.yc.vote.entity.SubjectBean;
 import com.yc.vote.entity.User;
 import com.yc.vote.entity.VoteBean;
 import com.yc.vote.service.VoteService;
+import com.yc.vote.web.mail.MailSender;
 
 @Controller("userAction")
 public class UserAction implements SessionAware,ModelDriven<User>{
@@ -23,13 +24,25 @@ public class UserAction implements SessionAware,ModelDriven<User>{
 	private VoteService voteService;
 	@Autowired
 	private User user;
+	@Autowired
+	private MailSender mailSender;
 
 	private Map<String,Object> session;
+	
 	//激活账号
 	public String  jihuo(){
-		
-		return null;
+		User  jiuser=(User) session.get(VoteData.LOGIN_USER);
+		System.out.println("激活"+jiuser);
+		int res=mailSender.SendMail(jiuser.getVuEmail(), jiuser.getVuUsername());
+		System.out.println("结果"+res);
+		if(res>0){
+			return "list";
+		}else {
+			session.put(VoteData.ERROR_MSG,"激活失败！！！");
+			return "registerSuccess";
+		}
 	}
+	
 	//登陆
 	public String login(){
 		System.out.println("user   "+user);

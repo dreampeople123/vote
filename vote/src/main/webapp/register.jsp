@@ -36,7 +36,6 @@
 	<div class="content">
 	   <form method="post" action="user_register" >
 			<dl>
-				
 				<dt>用户名：</dt>
 				<dd><input type="text" class="input-text" name="vuUsername" value=""/></dd>
 				<dt>密码：</dt>

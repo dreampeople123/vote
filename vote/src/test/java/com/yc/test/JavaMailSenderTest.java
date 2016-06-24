@@ -16,11 +16,16 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.yc.vote.web.mail.MailSender;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
 public class JavaMailSenderTest {
 	@Autowired
 	private JavaMailSender javaMailSender;
+	@Autowired
+	private MailSender mailSender;
+	
 	@Test
 	public void testSendMail() {
 		SimpleMailMessage smm=new SimpleMailMessage();//邮件信息类
@@ -52,5 +57,9 @@ public class JavaMailSenderTest {
 		javaMailSender.send(mm);//发送邮件
 		System.out.println("邮件发送成功");
 	}
-
+	@Test
+	public void testSendMail03() {
+		int res=mailSender.SendMail("1107577214@qq.com", "gaoyang");
+		System.out.println("ceshi "+res);
+	}
 }

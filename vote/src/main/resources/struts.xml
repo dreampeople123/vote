@@ -13,7 +13,6 @@
 	
 		<interceptors>
 			<interceptor name="LoginInterceptor" class="com.yc.vote.web.interceptor.LoginInterceptor" />
-				
 			<interceptor-stack name="myStack">
 				<interceptor-ref name="defaultStack" />
 				<interceptor-ref name="LoginInterceptor" >
